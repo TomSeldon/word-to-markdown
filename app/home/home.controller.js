@@ -10,8 +10,29 @@
    * @param {GetContentService} getContent
    * @param {MarkdownConverterService} markdownConverter
    */
-  function HomeController() {
-    // todo: Implement
+  function HomeController(getContent, markdownConverter) {
+    /**
+     * @type {GetContentService}
+     * @private
+     */
+    this._getContent = getContent;
+
+    /**
+     * @type {MarkdownConverterService}
+     * @private
+     */
+    this._markdownConverter = markdownConverter;
+
+    /**
+     * @type {boolean}
+     * @private
+     */
+    this._isLoading = false;
+
+    /**
+     * @type {string}
+     */
+    this.markdown = '';
   }
 
   /**
