@@ -1,25 +1,14 @@
-(function(){
+(function(angular) {
   'use strict';
 
-  angular.module('officeAddin')
-         .controller('homeController', ['dataService', homeController]);
+  angular.module('word-to-markdown.states.home', [])
+      .controller('HomeController', HomeController);
 
   /**
    * Controller constructor
    */
-  function homeController(dataService){
-    var vm = this;  // jshint ignore:line
-    vm.title = 'home controller';
-    vm.dataObject = {};
-
-    getDataFromService();
-
-    function getDataFromService(){
-      dataService.getData()
-        .then(function(response){
-          vm.dataObject = response;
-        });
-    }
+  function HomeController() {
+    // todo: Implement
   }
 
-})();
+})(window.angular);
