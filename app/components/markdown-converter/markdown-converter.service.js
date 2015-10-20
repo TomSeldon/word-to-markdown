@@ -7,9 +7,30 @@
     /**
      * @class MarkdownConverterService
      * @constructor
+     *
+     * @param {GetContentService} getContent
      */
-    function MarkdownConverterService() {
+    function MarkdownConverterService(getContent) {
+        /**
+         * @type {GetContentService}
+         * @private
+         */
+        this._getContent = getContent;
     }
+
+    /**
+     * Converts the full Word document to Markdown syntax
+     *
+     * @returns {Promise.<string>}
+     */
+    MarkdownConverterService.prototype.convertDocumentToMarkdown = function() {
+        var _this = this;
+
+        return this._getContent.getDocumentAsOoxml()
+            .then(function(ooxml) {
+                return _this.convertFromOoxml(ooxml);
+            });
+    };
 
     /**
      * @param {string} html

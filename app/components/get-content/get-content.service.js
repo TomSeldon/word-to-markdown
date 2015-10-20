@@ -4,12 +4,35 @@
     angular.module('word-to-markdown.get-content', [
         'word-to-markdown.platform'
     ])
-        .provider('getContent', getContentProvider);
+        .service('getContent', GetContentService)
+        .provider('getContentBackend', getContentBackendProvider);
+
+    /**
+     * @class {GetContentService}
+     * @param {GetContentBackendOfficeService|GetContentBackendBrowserService} getContentBackend
+     * @constructor
+     */
+    function GetContentService(getContentBackend) {
+        /**
+         * @type {GetContentBackendOfficeService|GetContentBackendBrowserService}
+         * @private
+         */
+        this._getContentBackend = getContentBackend;
+    }
+
+    /**
+     * Call through to the getContentBackend implementation, which will differ per platform
+     *
+     * @returns {Promise.<string>} OOXML representation of the entire Word document
+     */
+    GetContentService.prototype.getDocumentAsOoxml = function() {
+        return this._getContentBackend.getDocumentAsOoxml.apply(this._getContentBackend, arguments);
+    };
 
     /**
      * Load different backends so we can run this in Office environment and stub the response when running in a browser
      */
-    function getContentProvider() {
+    function getContentBackendProvider() {
         /**
          * @param {PlatformService} platform
          * @param {angular.$q} $q

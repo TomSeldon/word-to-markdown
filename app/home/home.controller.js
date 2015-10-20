@@ -5,18 +5,11 @@
       .controller('HomeController', HomeController);
 
   /**
-   * Controller constructor
+   * Home Controller constructor
    *
-   * @param {GetContentService} getContent
    * @param {MarkdownConverterService} markdownConverter
    */
-  function HomeController(getContent, markdownConverter) {
-    /**
-     * @type {GetContentService}
-     * @private
-     */
-    this._getContent = getContent;
-
+  function HomeController(markdownConverter) {
     /**
      * @type {MarkdownConverterService}
      * @private
@@ -44,13 +37,16 @@
     this._isLoading = true; // set as loading
     this.markdown = ''; // reset converted markdown
 
-    this._getContent.getDocumentAsOoxml()
-        .then(function(ooxml) {
-          _this.markdown = _this._markdownConverter.convertFromOoxml(ooxml);
-        })
-        .finally(function() {
-          _this._isLoading = false;
-        });
+    this._markdownConverter.convertDocumentToMarkdown()
+      .then(function(markdown) {
+        _this.markdown = markdown;
+      })
+      .catch(function(error) {
+        // todo: handle error
+      })
+      .finally(function() {
+        _this._isLoading = false;
+      });
   };
 
   /**
