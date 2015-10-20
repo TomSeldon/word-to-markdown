@@ -7,15 +7,18 @@
     /**
      * @class GetContentService
      * @constructor
+     *
+     * @param {angular.$q} $q
      */
-    function GetContentService() {
+    function GetContentService($q) {
+        this._$q = $q;
     }
 
     /**
-     * @returns {string} HTML representation of the entire Word document
+     * @returns {Promise.<string>} HTML representation of the entire Word document
      */
-    GetContentService.prototype.getDocumentAsHtml = function() {
+    GetContentService.prototype.getDocumentAsOoxml = function() {
         // todo: implement
-        return  '';
+        return  this._$q.when('some ooxml stuff');
     };
 })(window.angular);
