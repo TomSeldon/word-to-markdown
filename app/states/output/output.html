@@ -3,7 +3,7 @@
 
     <p>{{ ::'w2md.conversion-complete-message' | translate }}</p>
 
-    <button ng-click="vm.goBackToStart()">{{ ::'w2md.back-to-start' | translate }}</button>
+    <button ui-sref="home">{{ ::'w2md.back-to-start' | translate }}</button>
 
     <textarea class="markdown-content" readonly="readonly">{{ vm.markdown }}</textarea>
 </div>
