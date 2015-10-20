@@ -1,3 +1,7 @@
 {{::vm.title}}
 
-<h1>test</h1>
+<button ng-show="vm.shouldShowConvertButton()" ng-click="vm.convertDocument()">{{ 'w2md.convert-document' | translate }}</button>
+
+<div ng-if="vm.markdown">
+    <textarea readonly="readonly">{{ vm.markdown }}</textarea>
+</div>

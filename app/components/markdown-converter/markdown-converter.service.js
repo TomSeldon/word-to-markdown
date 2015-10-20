@@ -15,8 +15,8 @@
      * @param {string} html
      * @returns {string} Markdown representation of HTML
      */
-    MarkdownConverterService.prototype.convertFromHtml = function(html) {
+    MarkdownConverterService.prototype.convertFromOoxml = function(html) {
         // todo: implement
-        return '';
+        return '#some markdown';
     };
 })(window.angular);

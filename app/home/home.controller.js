@@ -6,12 +6,59 @@
 
   /**
    * Controller constructor
+   *
+   * @param {GetContentService} getContent
+   * @param {MarkdownConverterService} markdownConverter
    */
-  function HomeController(getContent) {
-    // todo: Implement
-    getContent.getDocumentAsOoxml().then(function(data){
-      console.log(data);
-    })
+  function HomeController(getContent, markdownConverter) {
+    /**
+     * @type {GetContentService}
+     * @private
+     */
+    this._getContent = getContent;
+
+    /**
+     * @type {MarkdownConverterService}
+     * @private
+     */
+    this._markdownConverter = markdownConverter;
+
+    /**
+     * @type {boolean}
+     * @private
+     */
+    this._isLoading = false;
+
+    /**
+     * @type {string}
+     */
+    this.markdown = '';
   }
 
+  /**
+   * Try to convert the Word document to Markdown and save the result as a property on the view-model.
+   */
+  HomeController.prototype.convertDocument = function() {
+    var _this = this;
+
+    this._isLoading = true; // set as loading
+    this.markdown = ''; // reset converted markdown
+
+    this._getContent.getDocumentAsOoxml()
+        .then(function(ooxml) {
+          _this.markdown = _this._markdownConverter.convertFromOoxml(ooxml);
+        })
+        .finally(function() {
+          _this._isLoading = false;
+        });
+  };
+
+  /**
+   * @returns {boolean}
+   */
+  HomeController.prototype.shouldShowConvertButton = function() {
+    var notLoading = this._isLoading === false;
+
+    return Boolean(notLoading);
+  };
 })(window.angular);
