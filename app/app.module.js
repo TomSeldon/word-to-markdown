@@ -49,7 +49,7 @@
       console.error('App wasn\'t initialised in time. Use `window.wordToMarkDown.start` to manually bootstrap the application');
     }
 
-    window.wordToMarkDown = window.wordToMArkdown || {};
+    window.wordToMarkDown = window.wordToMarkDown || {};
     window.wordToMarkDown.start = bootstrap;
   }, initialisationMaxTime);
 
