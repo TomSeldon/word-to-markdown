@@ -7,6 +7,7 @@
 
   angular.module(appName, [
     // Vendor
+    'ngAnimate',
     'ngSanitize',
 
     // Components
