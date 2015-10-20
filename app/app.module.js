@@ -6,16 +6,17 @@
   var initialisationMaxTime = 3000; // Max time in ms before we report error that we haven't started
 
   angular.module(appName, [
-      // Vendor
-      'ngRoute',
-      'ngSanitize',
+    // Vendor
+    'ngRoute',
+    'ngSanitize',
 
-      // Routes / components
-      'word-to-markdown.routes',
-      'word-to-markdown.get-content',
-      'word-to-markdown.markdown-converter'
+    // Routes / components
+    'word-to-markdown.routes',
+    'word-to-markdown.get-content',
+    'word-to-markdown.markdown-converter',
+    'word-to-markdown.translations'
   ])
-  .config(debugLogging);
+      .config(debugLogging);
 
   /**
    * @param {angular.$logProvider} $logProvider
