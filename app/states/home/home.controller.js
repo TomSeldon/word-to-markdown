@@ -7,46 +7,41 @@
   /**
    * Home Controller constructor
    *
-   * @param {MarkdownConverterService} markdownConverter
+   * @param {ui.router.$state} $state
    */
-  function HomeController(markdownConverter) {
+  function HomeController($state) {
     /**
-     * @type {MarkdownConverterService}
+     * @type {$state}
      * @private
      */
-    this._markdownConverter = markdownConverter;
+    this._$state = $state;
 
     /**
      * @type {boolean}
      * @private
      */
     this._isLoading = false;
-
-    /**
-     * @type {string}
-     */
-    this.markdown = '';
   }
 
   /**
-   * Try to convert the Word document to Markdown and save the result as a property on the view-model.
+   * Move to the output state where we'll show the generated Markdown.
+   *
+   * The actual conversion is handled in a resolve when going to the output view, but
+   * we can handle failure here if the state transition fails.
    */
   HomeController.prototype.convertDocument = function() {
     var _this = this;
 
     this._isLoading = true; // set as loading
-    this.markdown = ''; // reset converted markdown
 
-    this._markdownConverter.convertDocumentToMarkdown()
-      .then(function(markdown) {
-        _this.markdown = markdown;
-      })
-      .catch(function(error) {
-        // todo: handle error
-      })
-      .finally(function() {
-        _this._isLoading = false;
-      });
+    this._$state.go('output')
+        .catch(function(error) {
+          // todo: handle error
+        })
+        .finally(function() {
+          // Mark that we're done loading, whatever the outcome was
+          _this._isLoading = false;
+        });
   };
 
   /**

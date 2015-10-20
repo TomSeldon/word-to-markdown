@@ -21,7 +21,11 @@
         });
     }
 
-    function getMarkdownForPage() {
-        return '';
+    /**
+     * @param markdownConverter
+     * @returns {Promise.<string>}
+     */
+    function getMarkdownForPage(markdownConverter) {
+        return markdownConverter.convertDocumentToMarkdown();
     }
 })(window.angular);
