@@ -7,14 +7,16 @@
 
   angular.module(appName, [
     // Vendor
-    'ngRoute',
     'ngSanitize',
 
-    // Routes / components
-    'word-to-markdown.routes',
+    // Components
     'word-to-markdown.get-content',
     'word-to-markdown.markdown-converter',
-    'word-to-markdown.translations'
+    'word-to-markdown.translations',
+
+    // States
+    'word-to-markdown.states.home',
+    'word-to-markdown.states.output'
   ])
       .config(debugLogging);
 

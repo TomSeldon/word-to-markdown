@@ -1,7 +1,7 @@
 (function(angular) {
   'use strict';
 
-  angular.module('word-to-markdown.states.home', [])
+  angular.module('word-to-markdown.states.home.controller', [])
       .controller('HomeController', HomeController);
 
   /**

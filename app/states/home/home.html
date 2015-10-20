@@ -6,8 +6,4 @@
     <p><strong>{{ ::'w2md.wont-change-document' | translate }}</strong></p>
 
     <button ng-show="vm.shouldShowConvertButton()" ng-click="vm.convertDocument()">{{ ::'w2md.convert-document' | translate }}</button>
-
-    <div ng-if="vm.markdown">
-        <textarea class="markdown-content" readonly="readonly">{{ vm.markdown }}</textarea>
-    </div>
 </div>
