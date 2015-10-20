@@ -1,7 +1,11 @@
 (function(Office, angular){
   'use strict';
 
-  angular.module('word-to-markdown', [
+  var appName = 'word-to-markdown';
+  var officeInitialised = false;
+  var initialisationMaxTime = 3000; // Max time in ms before we report error that we haven't started
+
+  angular.module(appName, [
       // Vendor
       'ngRoute',
       'ngSanitize',
@@ -23,9 +27,29 @@
     }
   }
 
+  /**
+   * Start the Angular app
+   */
+  function bootstrap() {
+    angular.bootstrap(document.getElementById('container'), [appName]);
+  }
+
   // when Office has initalized, manually bootstrap the app
   Office.initialize = function(){
     console.log('>>> Office.initialize()');
-    angular.bootstrap(jQuery('#container'), ['word-to-markdown']);
+    officeInitialised = true;
+    bootstrap();
   };
+
+  // When run in a browser, the app won't automatically initialise
+  // To work around this, we can expose a manual way of starting the app if we haven't been initialised after a set time
+  setTimeout(function() {
+    if (!officeInitialised) {
+      console.error('App wasn\'t initialised in time. Use `window.wordToMarkDown.start` to manually bootstrap the application');
+    }
+
+    window.wordToMarkDown = window.wordToMArkdown || {};
+    window.wordToMarkDown.start = bootstrap;
+  }, initialisationMaxTime);
+
 })(window.Office, window.angular);
