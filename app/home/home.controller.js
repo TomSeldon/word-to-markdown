@@ -7,8 +7,11 @@
   /**
    * Controller constructor
    */
-  function HomeController() {
+  function HomeController(getContent) {
     // todo: Implement
+    getContent.getDocumentAsOoxml().then(function(data){
+      console.log(data);
+    })
   }
 
 })(window.angular);
