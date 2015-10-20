@@ -1,15 +1,50 @@
 (function(angular) {
     'use strict';
 
+    /**
+     * @filedesc Creates a service that is capable of accessing the document content (currently just as OOXML).
+     *
+     * A public `getContent` service is registered which delegates to a `getContentBackend` provider. This is done so that
+     * we can have environment specific implementations without changing the service, or having to inject different services
+     * to consumers.
+     *
+     * The result is that when running in Office, we can use the 'real' implementation by providing a `getContentBackend`
+     * that uses the Office API(s), but when running in a browser based environment (e.g. for development or unit testing)
+     * we can swap out the backend for one with the same contract but returns some mock data.
+     */
+
     angular.module('word-to-markdown.get-content', [
         'word-to-markdown.platform'
     ])
-        .provider('getContent', getContentProvider);
+        .service('getContent', GetContentService)
+        .provider('getContentBackend', getContentBackendProvider);
+
+    /**
+     * @class {GetContentService}
+     * @param {GetContentBackendOfficeService|GetContentBackendBrowserService} getContentBackend
+     * @constructor
+     */
+    function GetContentService(getContentBackend) {
+        /**
+         * @type {GetContentBackendOfficeService|GetContentBackendBrowserService}
+         * @private
+         */
+        this._getContentBackend = getContentBackend;
+    }
+
+    /**
+     * Call through to the getContentBackend implementation, which will differ per platform
+     *
+     * @returns {Promise.<string>} OOXML representation of the entire Word document
+     */
+    GetContentService.prototype.getDocumentAsOoxml = function() {
+        return this._getContentBackend.getDocumentAsOoxml.apply(this._getContentBackend, arguments);
+    };
 
     /**
      * Load different backends so we can run this in Office environment and stub the response when running in a browser
      */
-    function getContentProvider() {
+    function getContentBackendProvider() {
         /**
          * @param {PlatformService} platform
          * @param {angular.$q} $q
