@@ -9,7 +9,8 @@
      */
     function registerTranslations($translateProvider) {
         $translateProvider.translations('en', {
-            'w2md.convert-document': 'Convert Document'
+            'w2md.convert-document': 'Convert',
+            'w2md.convert-document-to-markdown': 'Convert document to markdown'
         });
 
         $translateProvider.preferredLanguage('en');
