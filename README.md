@@ -1,4 +1,4 @@
-# Word to Markdown [![Build Status](https://travis-ci.org/TomSeldon/office-365-hackathon.svg?branch=master)](https://travis-ci.org/TomSeldon/office-365-hackathon)
+# Word to Markdown [![Build Status](https://travis-ci.org/TomSeldon/office-365-hackathon.svg?branch=master)](https://travis-ci.org/TomSeldon/office-365-hackathon) [![Coverage Status](https://coveralls.io/repos/TomSeldon/office-365-hackathon/badge.svg?branch=master&service=github)](https://coveralls.io/github/TomSeldon/office-365-hackathon?branch=master)
 
 > An Office plugin for converting Microsoft Word documents to Markdown
 
