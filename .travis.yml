@@ -17,10 +17,10 @@ cache:
 
 before_install:
   - npm prune
-  - bower prune
+  - node_modules/.bin/bower prune
 
 install:
-  - bower install
+  - node_modules/.bin/bower install
   - npm install
 
 script:
