@@ -28,9 +28,7 @@
 
         return this._getContent.getDocumentAsHtml()
             .then(function(html) {
-                var t = _this.convertFromHtml(html);
-                console.log(t);
-                return t;
+                return _this.convertFromHtml(html);
             });
     };
 
