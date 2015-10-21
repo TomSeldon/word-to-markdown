@@ -19,7 +19,15 @@
     'word-to-markdown.states.home',
     'word-to-markdown.states.output'
   ])
+      .run(goToInitialState)
       .config(debugLogging);
+
+  /**
+   * @param {ui.router.$state} $state
+   */
+  function goToInitialState($state) {
+    $state.go('home');
+  }
 
   /**
    * @param {angular.$logProvider} $logProvider
