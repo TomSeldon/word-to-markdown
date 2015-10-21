@@ -18,3 +18,8 @@
     opacity: 1;
     transform: scale3d(0, 0, 0);
 }
+
+
+.main-view {
+    padding: 0.5em;
+}
