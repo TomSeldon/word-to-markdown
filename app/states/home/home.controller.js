@@ -36,7 +36,8 @@
 
     this._$state.go('output')
         .catch(function(error) {
-          // todo: handle error
+          // todo: handle error better
+          alert('error: ' + error);
         })
         .finally(function() {
           // Mark that we're done loading, whatever the outcome was
