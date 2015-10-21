@@ -25,3 +25,6 @@ install:
 
 script:
   - node_modules/.bin/gulp karma:ci
+
+after_success:
+  - coveralls
