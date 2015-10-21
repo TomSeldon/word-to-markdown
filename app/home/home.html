@@ -1,9 +1,0 @@
-<div class="home-view">
-    <h1>{{ ::'w2md.convert-document-to-markdown' | translate }}</h1>
-
-    <button ng-show="vm.shouldShowConvertButton()" ng-click="vm.convertDocument()">{{ ::'w2md.convert-document' | translate }}</button>
-
-    <div ng-if="vm.markdown">
-        <textarea class="markdown-content" readonly="readonly">{{ vm.markdown }}</textarea>
-    </div>
-</div>

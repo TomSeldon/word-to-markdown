@@ -7,14 +7,17 @@
 
   angular.module(appName, [
     // Vendor
-    'ngRoute',
+    'ngAnimate',
     'ngSanitize',
 
-    // Routes / components
-    'word-to-markdown.routes',
+    // Components
     'word-to-markdown.get-content',
     'word-to-markdown.markdown-converter',
-    'word-to-markdown.translations'
+    'word-to-markdown.translations',
+
+    // States
+    'word-to-markdown.states.home',
+    'word-to-markdown.states.output'
   ])
       .config(debugLogging);
 
@@ -49,7 +52,7 @@
       console.error('App wasn\'t initialised in time. Use `window.wordToMarkDown.start` to manually bootstrap the application');
     }
 
-    window.wordToMarkDown = window.wordToMArkdown || {};
+    window.wordToMarkDown = window.wordToMarkDown || {};
     window.wordToMarkDown.start = bootstrap;
   }, initialisationMaxTime);
 

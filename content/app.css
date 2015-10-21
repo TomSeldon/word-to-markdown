@@ -1,0 +1,20 @@
+/* ui-view transitions */
+[ui-view].ng-enter,
+[ui-view].ng-leave {
+    transition: all 0.5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+    opacity: 0;
+    transform: scale3d(0.99, 0.99, 0.99);
+}
+
+[ui-view].ng-enter-active {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+    opacity: 1;
+    transform: scale3d(0, 0, 0);
+}
