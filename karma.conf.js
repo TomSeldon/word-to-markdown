@@ -27,8 +27,12 @@ module.exports = function(config) {
         },
 
         coverageReporter: {
-            type : 'html',
-            dir : 'coverage/'
+            dir : 'coverage/',
+            reporters: [
+                { type: 'lcov', subdir: 'report-lcov' },
+                { type: 'html', subdir: 'report-html' },
+                { type: 'cobertura', subdir: '.', file: 'cobertura.txt' }
+            ]
         }
     });
 };

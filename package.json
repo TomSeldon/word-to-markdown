@@ -8,6 +8,7 @@
     "bower": "^1.6.3",
     "chalk": "^1.1.1",
     "gulp": "^3.9.0",
+    "gulp-coveralls": "^0.1.4",
     "gulp-webserver": "^0.9.1",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",

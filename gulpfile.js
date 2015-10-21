@@ -27,6 +27,13 @@ gulp.task('karma:tdd', function(done) {
       .start();
 });
 
+gulp.task('coveralls', function() {
+  var coveralls = require('gulp-coveralls');
+
+  gulp.src('coverage/**/lcov.info')
+      .pipe(coveralls());
+});
+
 gulp.task('serve-static', function() {
   gulp.src('.')
       .pipe(webserver({
