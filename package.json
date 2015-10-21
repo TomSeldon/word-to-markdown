@@ -5,6 +5,7 @@
     "postinstall": "bower install"
   },
   "devDependencies": {
+    "bower": "^1.6.3",
     "chalk": "^1.1.1",
     "gulp": "^3.9.0",
     "gulp-webserver": "^0.9.1",
