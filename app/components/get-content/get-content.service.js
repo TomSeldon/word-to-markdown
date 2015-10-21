@@ -114,6 +114,6 @@
      * @returns {Promise.<string>} Mock HTML representation of the entire Word document
      */
     GetContentBackendBrowserService.prototype.getDocumentAsHtml = function() {
-        return this._$q.when('HTML content');
+        return this._$q.when('<h1>HTML content</h1>');
     };
 })(window.angular);

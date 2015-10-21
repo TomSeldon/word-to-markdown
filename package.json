@@ -19,5 +19,8 @@
     "minimist": "^1.2.0",
     "phantomjs": "^1.9.18",
     "xmllint": "git+https://github.com/kripken/xml.js.git"
+  },
+  "dependencies": {
+    "upndown": "^2.0.2"
   }
 }
