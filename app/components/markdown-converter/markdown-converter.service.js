@@ -26,9 +26,11 @@
     MarkdownConverterService.prototype.convertDocumentToMarkdown = function() {
         var _this = this;
 
-        return this._getContent.getDocumentAsOoxml()
-            .then(function(ooxml) {
-                return _this.convertFromOoxml(ooxml);
+        return this._getContent.getDocumentAsHtml()
+            .then(function(html) {
+                var t = _this.convertFromHtml(html);
+                console.log(t);
+                return t;
             });
     };
 
@@ -36,7 +38,7 @@
      * @param {string} html
      * @returns {string} Markdown representation of HTML
      */
-    MarkdownConverterService.prototype.convertFromOoxml = function(html) {
+    MarkdownConverterService.prototype.convertFromHtml = function(html) {
         return toMarkdown(html);
     };
 })(window.angular);

@@ -35,10 +35,10 @@
     /**
      * Call through to the getContentBackend implementation, which will differ per platform
      *
-     * @returns {Promise.<string>} OOXML representation of the entire Word document
+     * @returns {Promise.<string>} HTML representation of the entire Word document
      */
-    GetContentService.prototype.getDocumentAsOoxml = function() {
-        return this._getContentBackend.getDocumentAsOoxml.apply(this._getContentBackend, arguments);
+    GetContentService.prototype.getDocumentAsHtml = function() {
+        return this._getContentBackend.getDocumentAsHtml.apply(this._getContentBackend, arguments);
     };
 
     /**
@@ -74,11 +74,11 @@
     }
 
     /**
-     * @returns {Promise.<string>} OOXML representation of the entire Word document
+     * @returns {Promise.<string>} HTML representation of the entire Word document
      */
-    GetContentBackendOfficeService.prototype.getDocumentAsOoxml = function() {
+    GetContentBackendOfficeService.prototype.getDocumentAsHtml = function() {
         var deferred = this._$q.defer();
-        var coercion = Office.CoercionType.Ooxml;
+        var coercion = Office.CoercionType.Html;
         var options = { valueFormat: "unformatted", filterType: "all" };
 
         Office.context.document.getSelectedDataAsync(coercion, options,
@@ -111,9 +111,9 @@
     }
 
     /**
-     * @returns {Promise.<string>} Mock OOXML representation of the entire Word document
+     * @returns {Promise.<string>} Mock HTML representation of the entire Word document
      */
-    GetContentBackendBrowserService.prototype.getDocumentAsOoxml = function() {
-        return this._$q.when('ooxml content');
+    GetContentBackendBrowserService.prototype.getDocumentAsHtml = function() {
+        return this._$q.when('HTML content');
     };
 })(window.angular);
