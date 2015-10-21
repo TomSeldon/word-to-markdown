@@ -1,0 +1,27 @@
+language: node_js
+
+node_js:
+  - '4'
+
+branches:
+  only:
+    - master
+    - "/^v[0-9\\.]+$"
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
+before_install:
+  - npm prune
+  - bower prune
+
+install:
+  - bower install
+  - npm install
+
+script:
+  - node_modules/.bin/gulp karma:ci
