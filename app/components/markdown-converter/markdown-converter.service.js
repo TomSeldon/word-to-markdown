@@ -1,6 +1,6 @@
 (function(angular) {
     'use strict';
-    
+
     angular.module('word-to-markdown.markdown-converter', [])
         .service('markdownConverter', MarkdownConverterService);
 
@@ -26,9 +26,9 @@
     MarkdownConverterService.prototype.convertDocumentToMarkdown = function() {
         var _this = this;
 
-        return this._getContent.getDocumentAsOoxml()
-            .then(function(ooxml) {
-                return _this.convertFromOoxml(ooxml);
+        return this._getContent.getDocumentAsHtml()
+            .then(function(html) {
+                return _this.convertFromHtml(html);
             });
     };
 
@@ -36,8 +36,7 @@
      * @param {string} html
      * @returns {string} Markdown representation of HTML
      */
-    MarkdownConverterService.prototype.convertFromOoxml = function(html) {
-        // todo: implement
-        return '#some markdown';
+    MarkdownConverterService.prototype.convertFromHtml = function(html) {
+        return toMarkdown(html);
     };
 })(window.angular);
