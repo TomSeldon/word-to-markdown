@@ -1,13 +1,12 @@
-(function(angular) {
+(function() {
   'use strict';
 
   angular.module('word-to-markdown.states.home.controller', [])
-      .controller('HomeController', HomeController);
+    .controller('HomeController', HomeController);
 
   /**
-   * Home Controller constructor
-   *
-   * @param {ui.router.$state} $state
+   * @constructor
+   * @param {ui.router.$state} $state - Service for navigating between UI states
    */
   function HomeController($state) {
     /**
@@ -28,29 +27,28 @@
    *
    * The actual conversion is handled in a resolve when going to the output view, but
    * we can handle failure here if the state transition fails.
+   *
+   * @returns {undefined}
    */
   HomeController.prototype.convertDocument = function() {
     var _this = this;
 
-    this._isLoading = true; // set as loading
+    this._isLoading = true;
 
+    // todo: handle error on state change fail
     this._$state.go('output')
-        .catch(function(error) {
-          // todo: handle error better
-          alert('error: ' + error);
-        })
-        .finally(function() {
-          // Mark that we're done loading, whatever the outcome was
-          _this._isLoading = false;
-        });
+      .finally(function() {
+        // Mark that we're done loading, whatever the outcome was
+        _this._isLoading = false;
+      });
   };
 
   /**
-   * @returns {boolean}
+   * @returns {boolean} Returns true if the "convert" button should be shown
    */
   HomeController.prototype.shouldShowConvertButton = function() {
     var notLoading = this._isLoading === false;
 
     return Boolean(notLoading);
   };
-})(window.angular);
+})();
