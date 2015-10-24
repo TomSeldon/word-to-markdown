@@ -57,11 +57,20 @@ gulp.task('eslint:src', function() {
 
 gulp.task('eslint:unit-tests', function() {
   return gulp.src('app/**/*.test.js')
-      .pipe(eslint({
-        configFile: '.eslintrc-unit-tests'
-      }))
-      .pipe(eslint.format())
-      .pipe(eslint.failAfterError());
+    .pipe(eslint({
+      configFile: '.eslintrc-unit-tests'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
+gulp.task('eslint:gulp-tasks', function() {
+  return gulp.src('gulpfile.js')
+    .pipe(eslint({
+      configFile: '.eslintrc-gulp-tasks'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('validate-xml', function () {

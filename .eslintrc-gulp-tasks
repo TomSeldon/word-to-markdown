@@ -1,0 +1,6 @@
+{
+    "extends": [".eslintrc-common"],
+    "env": {
+        "node": true
+    }
+}

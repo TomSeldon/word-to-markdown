@@ -1,5 +1,5 @@
 {
-    "extends": [".eslintrc"],
+    "extends": ["angular", ".eslintrc-common"],
     "env": {
         "browser": false,
         "commonjs": true,
