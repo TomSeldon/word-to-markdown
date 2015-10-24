@@ -13,10 +13,6 @@ env:
   - BUILD=static-no-linting
   - BUILD=static-only-linting
 
-matrix:
-  allow_failures:
-    - env: BUILD=static-only-linting
-
 cache:
   directories:
     - node_modules
