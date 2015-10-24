@@ -37,8 +37,8 @@
      *
      * @returns {Promise.<string>} HTML representation of the entire Word document
      */
-    GetContentService.prototype.getDocumentAsHtml = function() {
-        return this._getContentBackend.getDocumentAsHtml.apply(this._getContentBackend, arguments);
+    GetContentService.prototype.getSelectedTextAsHtml = function() {
+        return this._getContentBackend.getSelectedTextAsHtml.apply(this._getContentBackend, arguments);
     };
 
     /**
@@ -74,9 +74,9 @@
     }
 
     /**
-     * @returns {Promise.<string>} HTML representation of the entire Word document
+     * @returns {Promise.<string>} HTML representation of the selected text
      */
-    GetContentBackendOfficeService.prototype.getDocumentAsHtml = function() {
+    GetContentBackendOfficeService.prototype.getSelectedTextAsHtml = function() {
         var deferred = this._$q.defer();
         var coercion = Office.CoercionType.Html;
         var options = { valueFormat: "unformatted", filterType: "all" };
@@ -111,9 +111,9 @@
     }
 
     /**
-     * @returns {Promise.<string>} Mock HTML representation of the entire Word document
+     * @returns {Promise.<string>} Mock HTML representation of the selected text
      */
-    GetContentBackendBrowserService.prototype.getDocumentAsHtml = function() {
+    GetContentBackendBrowserService.prototype.getSelectedTextAsHtml = function() {
         return this._$q.when('<h1>HTML content</h1>');
     };
 })(window.angular);
