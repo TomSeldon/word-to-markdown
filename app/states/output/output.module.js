@@ -15,16 +15,16 @@
             templateUrl: 'app/states/output/output.html',
             controller: 'OutputController as vm',
             resolve: {
-                output: getMarkdownForPage
+                output: getMarkdownForSelectedText
             }
         });
     }
 
     /**
-     * @param markdownConverter
+     * @param {MarkdownConverterService} markdownConverter
      * @returns {Promise.<string>}
      */
-    function getMarkdownForPage(markdownConverter) {
-        return markdownConverter.convertDocumentToMarkdown();
+    function getMarkdownForSelectedText(markdownConverter) {
+        return markdownConverter.convertSelectedText();
     }
 })(window.angular);

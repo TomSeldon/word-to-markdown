@@ -5,11 +5,9 @@
         .controller('OutputController', OutputController);
 
     /**
-     * Controller constructor
-     *
      * @param {string} output - The generated markdown
      */
-    function OutputController($state, output) {
+    function OutputController(output) {
         /**
          * @type {string}
          */

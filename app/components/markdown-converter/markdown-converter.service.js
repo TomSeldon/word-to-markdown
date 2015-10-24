@@ -26,14 +26,14 @@
     }
 
     /**
-     * Converts the full Word document to Markdown syntax
+     * Converts the selected text within the Word document to markdown.
      *
      * @returns {Promise.<string>}
      */
-    MarkdownConverterService.prototype.convertDocumentToMarkdown = function() {
+    MarkdownConverterService.prototype.convertSelectedText = function() {
         var _this = this;
 
-        return this._getContent.getDocumentAsHtml()
+        return this._getContent.getSelectedTextAsHtml()
             .then(function(html) {
                 return _this.convertFromHtml(html);
             });
