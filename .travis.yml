@@ -10,8 +10,7 @@ branches:
 sudo: false
 
 env:
-  - BUILD=static-no-linting
-  - BUILD=static-only-linting
+  - BUILD=static
 
 cache:
   directories:
