@@ -1,6 +1,11 @@
 {
     "extends": ["angular", ".eslintrc-common"],
+
     "env": {
         "browser": true
+    },
+
+    "globals": {
+        "Office": true
     }
 }
