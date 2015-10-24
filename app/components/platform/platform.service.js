@@ -15,13 +15,15 @@
      * @returns {boolean}
      */
     PlatformService.prototype.isRunningInBrowser = function() {
-        return typeof Office.context.document === 'undefined';
+        return !this.isRunningInOffice();
     };
 
     /**
      * @returns {boolean}
      */
     PlatformService.prototype.isRunningInOffice = function() {
-        return typeof Office.context.document !== 'undefined';
+        var hasContext = typeof Office.context !== 'undefined';
+
+        return hasContext && typeof Office.context.document !== 'undefined';
     };
 })(window.angular, window.Office);
