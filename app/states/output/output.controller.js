@@ -1,16 +1,17 @@
-(function(angular) {
-    'use strict';
+(function() {
+  'use strict';
 
-    angular.module('word-to-markdown.states.output.controller', [])
-        .controller('OutputController', OutputController);
+  angular.module('word-to-markdown.states.output.controller', [])
+    .controller('OutputController', OutputController);
 
+  /**
+   * @constructor
+   * @param {string} output - The generated markdown
+   */
+  function OutputController(output) {
     /**
-     * @param {string} output - The generated markdown
+     * @type {string}
      */
-    function OutputController(output) {
-        /**
-         * @type {string}
-         */
-        this.markdown = output;
-    }
-})(window.angular);
+    this.markdown = output;
+  }
+})();
