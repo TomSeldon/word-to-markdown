@@ -5,5 +5,9 @@
         "commonjs": true,
         "node": true,
         "jasmine": true
+    },
+    "globals": {
+        "inject": true,
+        "module": true
     }
 }
