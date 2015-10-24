@@ -12,7 +12,6 @@
      */
     function routeConfigurator($stateProvider) {
         $stateProvider.state('output', {
-            url: '/output',
             templateUrl: 'app/states/output/output.html',
             controller: 'OutputController as vm',
             resolve: {
