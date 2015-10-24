@@ -1,0 +1,16 @@
+{
+  "extends": ["angular", "google"],
+
+  "rules": {
+    "max-len": [2, 120, 2, {
+      "ignoreUrls": true
+    }],
+
+    "valid-jsdoc": [2, {
+      "requireReturn": true,
+      "prefer": {
+        "returns":"returns"
+      }
+    }]
+  }
+}
