@@ -73,6 +73,15 @@ gulp.task('eslint:gulp-tasks', function() {
     .pipe(eslint.failAfterError());
 });
 
+gulp.task('eslint:config', function() {
+  return gulp.src(['karma.conf.js'])
+    .pipe(eslint({
+      configFile: '.eslintrc-commonjs-config'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
 gulp.task('validate-xml', function () {
   var options = minimist(process.argv.slice(2));
   var xsd = fs.readFileSync('./manifest.xsd');
