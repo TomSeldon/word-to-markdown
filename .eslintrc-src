@@ -7,5 +7,9 @@
 
     "globals": {
         "Office": true
+    },
+
+    "rules": {
+        "angular/controller-as-vm": 0
     }
 }
