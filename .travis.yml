@@ -25,6 +25,7 @@ install:
 
 script:
   - node_modules/.bin/gulp karma:ci
+  - node_modules/.bin/gulp validate-xml
 
 after_success:
   - node_modules/.bin/gulp coveralls
