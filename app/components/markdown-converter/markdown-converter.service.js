@@ -1,61 +1,63 @@
-(function(angular) {
-    'use strict';
+/* global upndown:false */
+/* eslint-disable new-cap */
+(function() {
+  'use strict';
 
-    angular.module('word-to-markdown.markdown-converter', [])
-        .service('markdownConverter', MarkdownConverterService);
+  angular.module('word-to-markdown.markdown-converter', [])
+    .service('markdownConverter', MarkdownConverterService);
+
+  /**
+   * @class MarkdownConverterService
+   * @constructor
+   *
+   * @param {angular.$q} $q - Service for working with Promises within Angular
+   * @param {GetContentService} getContent - Service for getting content from the Word document
+   */
+  function MarkdownConverterService($q, getContent) {
+    /**
+     * @type {angular.$q}
+     * @private
+     */
+    this._$q = $q;
 
     /**
-     * @class MarkdownConverterService
-     * @constructor
-     *
-     * @param {angular.$q} $q
-     * @param {GetContentService} getContent
+     * @type {GetContentService}
+     * @private
      */
-    function MarkdownConverterService($q, getContent) {
-        /**
-         * @type {angular.$q}
-         * @private
-         */
-        this._$q = $q;
+    this._getContent = getContent;
+  }
 
-        /**
-         * @type {GetContentService}
-         * @private
-         */
-        this._getContent = getContent;
-    }
+  /**
+   * Converts the selected text within the Word document to markdown.
+   *
+   * @returns {Promise.<string>} Promise that resolves to markdown representation of selected text
+   */
+  MarkdownConverterService.prototype.convertSelectedText = function() {
+    var _this = this;
 
-    /**
-     * Converts the selected text within the Word document to markdown.
-     *
-     * @returns {Promise.<string>}
-     */
-    MarkdownConverterService.prototype.convertSelectedText = function() {
-        var _this = this;
+    return this._getContent.getSelectedTextAsHtml()
+      .then(function(html) {
+        return _this.convertFromHtml(html);
+      });
+  };
 
-        return this._getContent.getSelectedTextAsHtml()
-            .then(function(html) {
-                return _this.convertFromHtml(html);
-            });
-    };
+  /**
+   * @param {string} html - HTML representation of Word document text
+   * @returns {string} Markdown representation of HTML
+   */
+  MarkdownConverterService.prototype.convertFromHtml = function(html) {
+    var deferred = this._$q.defer();
+    var und = new upndown();
 
-    /**
-     * @param {string} html
-     * @returns {string} Markdown representation of HTML
-     */
-    MarkdownConverterService.prototype.convertFromHtml = function(html) {
-        var deferred = this._$q.defer();
-        var und = new upndown();
+    und.convert(html, function(error, markdown) {
+      if (error) {
+        deferred.reject(error);
+        return;
+      }
 
-        und.convert(html, function(error, markdown) {
-            if (error) {
-                deferred.reject(error);
-                return;
-            }
+      deferred.resolve(markdown);
+    });
 
-            deferred.resolve(markdown);
-        });
-
-        return deferred.promise;
-    };
-})(window.angular);
+    return deferred.promise;
+  };
+})();
