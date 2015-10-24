@@ -1,0 +1,6 @@
+{
+    "extends": ["angular", ".eslintrc-common"],
+    "env": {
+        "browser": true
+    }
+}

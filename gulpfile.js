@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
+var eslint = require('gulp-eslint');
 var fs = require('fs');
 var minimist = require('minimist');
 var xmllint = require('xmllint');
@@ -43,6 +44,42 @@ gulp.task('serve-static', function() {
         directoryListing: true,
         fallback: 'index.html'
       }));
+});
+
+gulp.task('eslint:src', function() {
+  return gulp.src(['app/**/*.js', '!app/**/*.test.js'])
+      .pipe(eslint({
+        configFile: '.eslintrc-src'
+      }))
+      .pipe(eslint.format())
+      .pipe(eslint.failAfterError());
+});
+
+gulp.task('eslint:unit-tests', function() {
+  return gulp.src('app/**/*.test.js')
+    .pipe(eslint({
+      configFile: '.eslintrc-unit-tests'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
+gulp.task('eslint:gulp-tasks', function() {
+  return gulp.src('gulpfile.js')
+    .pipe(eslint({
+      configFile: '.eslintrc-gulp-tasks'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
+gulp.task('eslint:config', function() {
+  return gulp.src(['karma.conf.js'])
+    .pipe(eslint({
+      configFile: '.eslintrc-commonjs-config'
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('validate-xml', function () {

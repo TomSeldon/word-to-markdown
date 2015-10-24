@@ -1,0 +1,9 @@
+{
+    "extends": ["angular", ".eslintrc-common"],
+    "env": {
+        "browser": false,
+        "commonjs": true,
+        "node": true,
+        "jasmine": true
+    }
+}

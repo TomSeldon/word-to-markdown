@@ -1,0 +1,7 @@
+{
+    "extends": [".eslintrc-common"],
+    "env": {
+        "commonjs": true,
+        "node": true
+    }
+}
