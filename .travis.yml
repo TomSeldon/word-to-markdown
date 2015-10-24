@@ -6,9 +6,16 @@ node_js:
 branches:
   only:
     - master
-    - "/^v[0-9\\.]+$"
 
 sudo: false
+
+env:
+  - BUILD=static-no-linting
+  - BUILD=static-only-linting
+
+matrix:
+  allow_failures:
+    - env: BUILD=static-only-linting
 
 cache:
   directories:
@@ -24,8 +31,7 @@ install:
   - node_modules/.bin/bower prune
 
 script:
-  - node_modules/.bin/gulp karma:ci
-  - node_modules/.bin/gulp validate-xml
+  - ci-scripts/script.sh
 
 after_success:
-  - node_modules/.bin/gulp coveralls
+  - ci-scripts/after-success.sh
