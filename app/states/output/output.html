@@ -1,9 +1,12 @@
 <div class="output-view">
-    <h1>{{ ::'w2md.converted-document-to-markdown' | translate }}</h1>
+    <h2>{{ ::'w2md.converted-selection-to-markdown' | translate }}</h2>
 
     <p>{{ ::'w2md.conversion-complete-message' | translate }}</p>
 
-    <button ui-sref="home">{{ ::'w2md.back-to-start' | translate }}</button>
+    <button class="ms-Button ms-Button--primary"
+            ui-sref="home">
+         <span class="ms-Button-label">{{ ::'w2md.back-to-start' | translate }}</span>
+    </button>
 
     <textarea class="markdown-content" readonly="readonly">{{ vm.markdown }}</textarea>
 </div>
