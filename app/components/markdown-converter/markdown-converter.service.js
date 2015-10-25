@@ -3,7 +3,9 @@
 (function() {
   'use strict';
 
-  angular.module('word-to-markdown.markdown-converter', [])
+  angular.module('word-to-markdown.markdown-converter', [
+    'word-to-markdown.get-content'
+  ])
     .service('markdownConverter', MarkdownConverterService);
 
   /**
@@ -43,7 +45,7 @@
 
   /**
    * @param {string} html - HTML representation of Word document text
-   * @returns {string} Markdown representation of HTML
+   * @returns {Promise.<string>} Markdown representation of HTML
    */
   MarkdownConverterService.prototype.convertFromHtml = function(html) {
     var deferred = this._$q.defer();

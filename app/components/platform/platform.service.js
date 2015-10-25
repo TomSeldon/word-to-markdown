@@ -31,7 +31,7 @@
    * @returns {boolean} Returns true if we're running in a Microsoft Office environment
    */
   PlatformService.prototype.isRunningInOffice = function() {
-    var hasContext = typeof this._office.context !== 'undefined';
+    var hasContext = this._office && typeof this._office.context !== 'undefined';
 
     return hasContext && typeof this._office.context.document !== 'undefined';
   };
