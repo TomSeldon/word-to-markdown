@@ -2,7 +2,10 @@ module.exports = function(config) {
   config.set({
     files: [
       // Vendor
+      'bower_components/es5-shim/es5-shim.js',
+      'bower_components/promise-polyfill/Promise.js',
       'bower_components/jquery/jquery.js',
+      'node_modules/upndown/lib/upndown.bundle.js',
       'bower_components/office-ui-fabric/dist/js/jquery.fabric.min.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',

@@ -9,6 +9,6 @@
    * @returns {Office|undefined} The Office JS API
    */
   function officeFactory($window) {
-    return $window.Office;
+    return $window.Office || null;
   }
 })();
