@@ -39,6 +39,11 @@
 
     return this._getContent.getSelectedTextAsHtml()
       .then(function(html) {
+        // We get a lot of superfluous DOM from the Office API that results in unwanted output
+        // e.g. style content tags as comments
+        // For now, we can workaround this by cleaning the outputted HTML before converting it to markdown
+        html = _this._cleanHtml(html);
+
         return _this.convertFromHtml(html);
       });
   };
@@ -61,5 +66,27 @@
     });
 
     return deferred.promise;
+  };
+
+  /**
+   * todo: Implement way of getting clean DOM without relying on coupling to undocumented implementation detail
+   *
+   * The DOM we get back for the selected text isn't a partial HTML fragment, but a full HTML document complete with
+   * <head>, style elements, <body>, etc. This results in some junk content when converting to markdown.
+   *
+   * To workaround this, rather than convert the entire DOM we can instead target the specific element that contains
+   * the HTML representation of the selected text. This works just fine, but means we're coupled do an undocumented
+   * implementation detail of Office 365 and so it could break in the future.
+   *
+   * @param {string} html - HTML document from Word
+   * @returns {string} - A subset of the original HTML, i.e. just the content section without <head> etc.
+   * @private
+   */
+  MarkdownConverterService.prototype._cleanHtml = function(html) {
+    var div = document.createElement('div');
+
+    div.innerHTML = html;
+
+    return angular.element(div).find('.WordSection1').html();
   };
 })();

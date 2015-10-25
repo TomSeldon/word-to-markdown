@@ -99,7 +99,7 @@
       if (result.status === Office.AsyncResultStatus.Failed) {
         deferred.reject(error.name + ': ' + error.message);
       } else {
-        // Resolve selected data.
+        // Resolve selected data
         deferred.resolve(result.value);
       }
     }
