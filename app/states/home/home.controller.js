@@ -30,7 +30,7 @@
    *
    * @returns {undefined}
    */
-  HomeController.prototype.convertDocument = function() {
+  HomeController.prototype.convertSelection = function() {
     var _this = this;
 
     this._isLoading = true;

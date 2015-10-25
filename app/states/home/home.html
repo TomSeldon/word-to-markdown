@@ -1,9 +1,13 @@
 <div class="home-view">
-    <h1>{{ ::'w2md.convert-document-to-markdown' | translate }}</h1>
+    <h2>{{ ::'w2md.convert-selection-to-markdown' | translate }}</h2>
 
     <p>{{ ::'w2md.intro-to-markdown' | translate }}</p>
     <p>{{ ::'w2md.click-to-convert' | translate }}</p>
     <p><strong>{{ ::'w2md.wont-change-document' | translate }}</strong></p>
 
-    <button ng-show="vm.shouldShowConvertButton()" ng-click="vm.convertDocument()">{{ ::'w2md.convert-document' | translate }}</button>
+    <button class="ms-Button ms-Button--primary"
+            ng-show="vm.shouldShowConvertButton()"
+            ng-click="vm.convertSelection()">
+        <span class="ms-Button-label">{{ ::'w2md.convert-selection' | translate }}</span>
+    </button>
 </div>

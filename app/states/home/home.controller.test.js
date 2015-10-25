@@ -29,13 +29,13 @@ describe('home controller', function() {
     }));
 
     it('should try to take the user to the output state', function() {
-      homeController.convertDocument();
+      homeController.convertSelection();
 
       expect($state.go).toHaveBeenCalledWith('output');
     });
 
     it('should hide the convert button after it is pressed', function() {
-      homeController.convertDocument();
+      homeController.convertSelection();
       expect(homeController.shouldShowConvertButton()).toBe(false);
     });
   });
