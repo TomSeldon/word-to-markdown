@@ -6,7 +6,7 @@ gulp.task('serve-static', function() {
     .pipe(webserver({
       https: true,
       port: '8443',
-      host: 'localhost',
+      host: '0.0.0.0',
       directoryListing: true,
       fallback: 'index.html'
     }));
