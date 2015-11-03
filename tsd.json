@@ -16,6 +16,9 @@
     },
     "angularjs/angular-sanitize.d.ts": {
       "commit": "04a025ada3492a22df24ca2d8521c911697721b3"
+    },
+    "office-js/office-js.d.ts": {
+      "commit": "0dd29bf8253536ae24e61c109524e924ea510046"
     }
   }
 }
