@@ -10,3 +10,11 @@ than learning Markdown syntax.
 
 If that preferred tool happens to be Microsoft Word, you can use this add-in to convert the Word document to Markdown.
 
+## Development
+
+1. Check out repository
+1. `npm install` will install all dependencies and build the application
+
+To view the add-in in a browser, run `npm run gulp serve-static` and visit https://localhost:8443
+
+In another terminal, run `npm run gulp watch` for your changes to be automatically applied. You can then reload your page to see the changes.

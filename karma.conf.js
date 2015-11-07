@@ -15,8 +15,9 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
 
       // App
-      'app/components/**/*.js',
-      'app/states/**/*.js'
+      'app/components/**/*.ts',
+      'app/states/**/*.ts',
+      'app/**/*.test.js'
     ],
 
     frameworks: ['jasmine'],
@@ -26,7 +27,23 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
 
     preprocessors: {
-      'app/**/!(*.test).js': ['coverage']
+      'app/**/*.ts': ['typescript', 'coverage']
+    },
+
+    typescriptPreprocessor: {
+      options: {
+        declaration: true,
+        noExternalResolve: true,
+        sortOutput: true
+      }
+    },
+
+    typings: [
+      'typings/tsd.d.ts'
+    ],
+
+    transformPath: function(path) {
+      return path.replace(/\.ts$/, '.js');
     },
 
     coverageReporter: {

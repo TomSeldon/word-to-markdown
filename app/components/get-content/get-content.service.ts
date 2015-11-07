@@ -1,3 +1,4 @@
+/// <reference path="../../_references.d.ts" />
 (function() {
   'use strict';
 
@@ -43,24 +44,26 @@
 
   /**
    * Load different backends so we can run this in Office environment and stub the response when running in a browser
-   * @returns {undefined}
+   * @returns {Function}
    */
   function getContentBackendProvider() {
-    /**
-     * @param {PlatformService} platform - Service that exposes methods for checking the platform we're running on
-     * @param {angular.$q} $q - Service for working with promises
-     * @returns {GetContentBackendOfficeService|GetContentBackendBrowserService} Backend implementation
-     */
-    this.$get = function(platform, $q) {
-      var backend;
+    return {
+      /**
+       * @param {PlatformService} platform - Service that exposes methods for checking the platform we're running on
+       * @param {angular.$q} $q - Service for working with promises
+       * @returns {GetContentBackendOfficeService|GetContentBackendBrowserService} Backend implementation
+       */
+      $get: function(platform, $q) {
+        var backend;
 
-      if (platform.isRunningInOffice()) {
-        backend = new GetContentBackendOfficeService($q);
-      } else {
-        backend = new GetContentBackendBrowserService($q);
+        if (platform.isRunningInOffice()) {
+          backend = new GetContentBackendOfficeService($q);
+        } else {
+          backend = new GetContentBackendBrowserService($q);
+        }
+
+        return backend;
       }
-
-      return backend;
     };
   }
 
