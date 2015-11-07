@@ -1,3 +1,4 @@
+/// <reference path="../../_references.d.ts" />
 /* global upndown:false */
 /* eslint-disable new-cap */
 /* eslint-disable angular/document-service */

@@ -25,6 +25,7 @@
     "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
+    "karma-typescript-preprocessor": "0.0.21",
     "minimist": "^1.2.0",
     "phantomjs": "^1.9.18",
     "tsd": "^0.6.5",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "gulp-typescript": "^2.9.2",
+    "typescript": "^1.6.2",
     "upndown": "^2.0.2"
   }
 }
