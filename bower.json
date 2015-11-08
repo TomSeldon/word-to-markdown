@@ -10,7 +10,8 @@
     "angular-translate": "~2.8.1",
     "angular-ui-router": "~0.2.15",
     "angular-animate": "~1.4.7",
-    "promise-polyfill": "~2.1.0"
+    "promise-polyfill": "~2.1.0",
+    "upndown": "https://github.com/netgusto/upndown.git#5ba4d0f709ead32ca533c8f353665e81f9daa0ae"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.7",
