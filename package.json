@@ -6,6 +6,9 @@
     "gulp": "./node_modules/.bin/gulp",
     "tsd": "./node_modules/.bin/tsd"
   },
+  "engines": {
+    "node": "4.2.1"
+  },
   "devDependencies": {
     "bower": "^1.6.3",
     "chalk": "^1.1.1",
