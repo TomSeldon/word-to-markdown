@@ -1,8 +1,8 @@
 /// <reference path="../../_references.d.ts" />
 /// <reference path="home-controller.ts" />
 describe('home controller', () => {
-    let createController: Function;
-    let homeController: HomeController;
+    let createController:Function;
+    let homeController:HomeController;
 
     beforeEach(angular.mock.module('word-to-markdown.states.home'));
 
