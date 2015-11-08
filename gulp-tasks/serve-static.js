@@ -1,7 +1,8 @@
 var gulp = require('gulp');
-var webserver = require('gulp-webserver');
 
 gulp.task('serve-static', function() {
+  var webserver = require('gulp-webserver');
+
   gulp.src('.')
     .pipe(webserver({
       https: true,
