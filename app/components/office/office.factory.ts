@@ -1,15 +1,15 @@
 /// <reference path="../../_references.d.ts" />
 (function() {
-  'use strict';
+    'use strict';
 
-  angular.module('word-to-markdown.office', [])
-    .factory('office', officeFactory);
+    angular.module('word-to-markdown.office', [])
+        .factory('office', officeFactory);
 
-  /**
-   * @param {angular.$window} $window - Wrapper around window
-   * @returns {Office|undefined} The Office JS API
-   */
-  function officeFactory($window) {
-    return $window.Office || null;
-  }
+    /**
+     * @param {angular.IWindowService} $window - Wrapper around window
+     * @returns {Office|null} The Office JS API
+     */
+    function officeFactory($window: angular.IWindowService) {
+        return $window.Office || null;
+    }
 })();

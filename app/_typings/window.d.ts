@@ -1,3 +1,4 @@
 interface Window {
-    w2md: any
+    w2md: any,
+    Office: any
 }
