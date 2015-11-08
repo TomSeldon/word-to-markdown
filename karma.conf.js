@@ -22,19 +22,19 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
     browsers: ['PhantomJS'],
 
     preprocessors: {
-      'app/**/!(.test).ts': ['typescript', 'coverage'],
-      'app/**/*.test.ts': ['typescript']
+      'app/**/*.ts': ['typescript']
     },
 
     typescriptPreprocessor: {
       options: {
         declaration: true,
-        noExternalResolve: false
+        noExternalResolve: false,
+        sourceMap: true
       },
 
       typings: [
