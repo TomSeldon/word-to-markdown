@@ -6,13 +6,14 @@ class MarkdownConverterService implements IMarkdownConverterService {
      * @param {angular.IQService} $q
      * @param {IGetContentService} getContent
      */
-    constructor(private $q:angular.IQService, private getContent:IGetContentService) {}
+    constructor(private $q:angular.IQService, private getContent:IGetContentService) {
+    }
 
     /**
      * @param {string} html - HTML representation of Word document text
      * @returns {Promise.<string>} Markdown representation of HTML
      */
-    public convertFromHtml(html:string): angular.IPromise<string> {
+    public convertFromHtml(html:string):angular.IPromise<string> {
         var deferred = this.$q.defer();
         var und = new upndown();
 
@@ -33,7 +34,7 @@ class MarkdownConverterService implements IMarkdownConverterService {
      *
      * @returns {Promise.<string>} Promise that resolves to markdown representation of selected text
      */
-    public convertSelectedText(): angular.IPromise<string> {
+    public convertSelectedText():angular.IPromise<string> {
         return this.getContent.getSelectedTextAsHtml()
             .then((html) => {
                 return this.convertFromHtml(html);

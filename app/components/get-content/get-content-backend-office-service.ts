@@ -5,7 +5,8 @@ class GetContentBackendOfficeService implements IGetContentService {
      * @param $q
      * @param office
      */
-    constructor(private $q: angular.IQService, private office: any) {}
+    constructor(private $q:angular.IQService, private office:any) {
+    }
 
     /**
      * @returns {IPromise<T>}
@@ -47,7 +48,7 @@ class GetContentBackendOfficeService implements IGetContentService {
      * @returns {string} - A subset of the original HTML, i.e. just the content section without <head> etc.
      * @private
      */
-    private static cleanHtml(html: string) {
+    private static cleanHtml(html:string) {
         let div = document.createElement('div');
         let cleanedHtml;
 

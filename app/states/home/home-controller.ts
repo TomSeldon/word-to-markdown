@@ -1,6 +1,6 @@
 /// <reference path="../../_references.d.ts" />
 class HomeController {
-    private isLoading: boolean;
+    private isLoading:boolean;
 
     constructor(private $state) {
         this.isLoading = false;
@@ -26,7 +26,7 @@ class HomeController {
     /**
      * @returns {Boolean}
      */
-    public shouldShowConvertButton(): boolean {
+    public shouldShowConvertButton():boolean {
         const notLoading = this.isLoading === false;
 
         return Boolean(notLoading);

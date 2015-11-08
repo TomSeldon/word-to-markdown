@@ -1,7 +1,7 @@
 /// <reference path="../../_references.d.ts" />
 /// <reference path="markdown-converter-service-interface.ts" />
 /// <reference path="markdown-converter-service.ts" />
-(function() {
+(function () {
     'use strict';
 
     angular.module('word-to-markdown.markdown-converter', [

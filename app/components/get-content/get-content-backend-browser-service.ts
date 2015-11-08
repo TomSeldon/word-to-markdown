@@ -4,7 +4,8 @@ class GetContentBackendBrowserService implements IGetContentService {
     /**
      * @param $q
      */
-    constructor(private $q: angular.IQService) {}
+    constructor(private $q:angular.IQService) {
+    }
 
     /**
      * @returns {IPromise<T>}
