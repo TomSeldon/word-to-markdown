@@ -2,7 +2,7 @@
   "name": "word-to-markdown",
   "version": "0.1.0",
   "scripts": {
-    "postinstall": "bower install && gulp build",
+    "postinstall": "bower install && tsd install && gulp build",
     "gulp": "./node_modules/.bin/gulp",
     "tsd": "./node_modules/.bin/tsd"
   },
@@ -21,7 +21,7 @@
     "gulp-webserver": "^0.9.1",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",
-    "karma": "^0.13.11",
+    "karma": "^0.13.15",
     "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",

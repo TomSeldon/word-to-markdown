@@ -10,7 +10,10 @@ branches:
 sudo: false
 
 env:
-  - BUILD=static
+  global:
+    - secure: z9k4dz35c6clwuIj/Fd6Onw78HPn/GbeDHqkKI9zolSr7EGXpmZ+xbq9Xhaoil1S15YiTmeIL3xz/Q2Eo0waKk+ckxxITsXoDmQ5t3ni8uguspWQykAGLaopGVm3Z5ecJGSVYGiNLqILUmS/QrMthmGAtzjMEHGVhoBvk1zjX2+U6G1ULins6C3Du1edimhGlQaocpOW5ujh9EAr6mj/gxHBD5ZdY5+GABZbC0r3hgxFxgpwmmntvtoVklivJbAhbeElx3NJ0f4pg6USn9H0DqWMaGivY/FQ1wHRvcUNKjkFaFqWtwZj6PTB3Db0t9NKCgIcv5VIKvS0j4S6oAE5Tuoxm1x9OsjqW4bcghMxmRRtWJdWsds6UWYxWW3JcBfHdJI9GP4O9TKUt1llDp2mHAkf1cU2zzEwKe+M5uPPOyKmm61YnXgiCfgV7bnqrpOgvZIQlHkgIgExuFdTu3FbcjvwXJMUDPrmrYff6c9fGAlDJ3bTOMjStx35l6v5xQxpsJrv3O/aEfJLShpYCAHnJsPwiIRIavMaNRUoH9hrIClr7vo0radmbzNdEYcW/pyz9mGIXWQQmWCdqfW7jBAN6h+N25v/i7bKf8+z5xS8moTj9mMAdqOSFidZMSfVCi4/JOoeWClr+ix5982y0zVUg5/vcEe2u20kmlpbTI5iiBo=
+  matrix:
+    - BUILD=static
 
 cache:
   directories:

@@ -22,28 +22,29 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
     browsers: ['PhantomJS'],
 
     preprocessors: {
-      'app/**/*.ts': ['typescript', 'coverage']
+      'app/**/*.ts': ['typescript']
     },
 
     typescriptPreprocessor: {
       options: {
         declaration: true,
-        noExternalResolve: true,
-        sortOutput: true
+        noExternalResolve: false,
+        sourceMap: true
+      },
+
+      typings: [
+        'app/_typings/**/*.d.ts',
+        'typings/tsd.d.ts'
+      ],
+
+      transformPath: function(path) {
+        return path.replace(/\.ts$/, '.js');
       }
-    },
-
-    typings: [
-      'typings/tsd.d.ts'
-    ],
-
-    transformPath: function(path) {
-      return path.replace(/\.ts$/, '.js');
     },
 
     coverageReporter: {
