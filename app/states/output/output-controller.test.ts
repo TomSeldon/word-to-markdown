@@ -2,7 +2,7 @@
 /// <reference path="output-controller.ts" />
 describe('output controller', () => {
     let createController:Function;
-    let outputController:OutputController;
+    let outputController:W2MD.States.Output.OutputController;
     let markdown:string;
 
     beforeEach(angular.mock.module('word-to-markdown.states.output'));

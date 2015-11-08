@@ -1,6 +1,6 @@
 /// <reference path="markdown-converter-service-interface.ts" />
 describe('markdown converter service', () => {
-    let markdownConverter:IMarkdownConverterService;
+    let markdownConverter:W2MD.Components.MarkdownConverter.IMarkdownConverterService;
 
     beforeEach(angular.mock.module('word-to-markdown.markdown-converter'));
 

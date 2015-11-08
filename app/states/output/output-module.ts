@@ -1,12 +1,10 @@
 /// <reference path="../../_references.d.ts" />
 /// <reference path="output-controller.ts" />
-(function () {
-    'use strict';
-
+module W2MD.States.Output {
     angular.module('word-to-markdown.states.output', [
         'ui.router'
     ])
-        .controller('OutputController', OutputController)
+        .controller('OutputController', W2MD.States.Output.OutputController)
         .config(routeConfigurator);
 
     /**
@@ -30,4 +28,4 @@
     function getMarkdownForSelectedText(markdownConverter) {
         return markdownConverter.convertSelectedText();
     }
-})();
+}

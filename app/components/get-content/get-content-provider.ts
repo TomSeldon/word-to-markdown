@@ -2,9 +2,7 @@
 /// <reference path="get-content-service-interface.ts" />
 /// <reference path="get-content-backend-browser-service.ts" />
 /// <reference path="get-content-backend-office-service.ts" />
-(function () {
-    'use strict';
-
+module W2MD.Components.GetContent {
     /**
      * @filedesc Creates a service that is capable of accessing the document content (currently just as HTML).
      *
@@ -36,13 +34,13 @@
                 let backend;
 
                 if (platform.isRunningInOffice()) {
-                    backend = new GetContentBackendOfficeService($q, office);
+                    backend = new W2MD.Components.GetContent.GetContentBackendOfficeService($q, office);
                 } else {
-                    backend = new GetContentBackendBrowserService($q);
+                    backend = new W2MD.Components.GetContent.GetContentBackendBrowserService($q);
                 }
 
                 return backend;
             }
         };
     }
-})();
+}

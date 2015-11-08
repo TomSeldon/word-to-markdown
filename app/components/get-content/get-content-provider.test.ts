@@ -1,4 +1,4 @@
-/// <reference path="get-content.provider.ts" />
+/// <reference path="get-content-provider.ts" />
 /// <reference path="get-content-backend-office-service.ts" />
 /// <reference path="get-content-backend-office-service.ts" />
 describe('get content provider', () => {
@@ -33,7 +33,7 @@ describe('get content provider', () => {
         }));
 
         it('should return a backend suitable for use in a browser', () => {
-            expect(getContent instanceof GetContentBackendBrowserService).toBe(true);
+            expect(getContent instanceof W2MD.Components.GetContent.GetContentBackendBrowserService).toBe(true);
         });
     });
 
@@ -48,7 +48,7 @@ describe('get content provider', () => {
         }));
 
         it('should return a backend suitable for use in Office', () => {
-            expect(getContent instanceof GetContentBackendOfficeService).toBe(true);
+            expect(getContent instanceof W2MD.Components.GetContent.GetContentBackendOfficeService).toBe(true);
         });
     });
 });

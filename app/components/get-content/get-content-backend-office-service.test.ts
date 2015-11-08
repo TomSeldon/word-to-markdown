@@ -1,8 +1,8 @@
 /// <reference path="get-content-backend-office-service.ts" />
 describe('get content backend: office', () => {
-    let getContentBackendOfficeService;
-    let $rootScope;
-    let office;
+    let getContentBackendOfficeService:W2MD.Components.GetContent.GetContentBackendOfficeService;
+    let $rootScope:angular.IRootScopeService;
+    let office:any;
 
     beforeEach(angular.mock.module(($provide) => {
         $provide.value('office', {
@@ -28,7 +28,7 @@ describe('get content backend: office', () => {
         office = $injector.get('office');
         $rootScope = $injector.get('$rootScope');
 
-        getContentBackendOfficeService = new GetContentBackendOfficeService($q, office);
+        getContentBackendOfficeService = new W2MD.Components.GetContent.GetContentBackendOfficeService($q, office);
     }));
 
     describe('getting selected text', () => {

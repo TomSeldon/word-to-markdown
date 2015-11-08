@@ -1,7 +1,5 @@
 /// <reference path="../../_references.d.ts" />
-(function () {
-    'use strict';
-
+module W2MD.Components.Office {
     angular.module('word-to-markdown.office', [])
         .factory('office', officeFactory);
 
@@ -12,4 +10,4 @@
     function officeFactory($window:angular.IWindowService) {
         return $window.Office || null;
     }
-})();
+}

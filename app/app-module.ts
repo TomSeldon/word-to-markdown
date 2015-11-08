@@ -1,6 +1,4 @@
-(function () {
-    'use strict';
-
+module W2MD {
     angular.module('word-to-markdown', [
         // Vendor
         'ngAnimate',
@@ -38,4 +36,4 @@
             $logProvider.debugEnabled(true);
         }
     }
-})();
+}

@@ -2,14 +2,11 @@
 /// <reference path="home-controller.ts" />
 describe('home controller', () => {
     let createController:Function;
-    let homeController:HomeController;
+    let homeController:W2MD.States.Home.HomeController;
 
     beforeEach(angular.mock.module('word-to-markdown.states.home'));
 
     beforeEach(inject($injector => {
-        /**
-         * @returns {HomeController}
-         */
         createController = () => {
             const $controller = $injector.get('$controller');
 
