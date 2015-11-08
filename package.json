@@ -18,6 +18,7 @@
     "gulp-coveralls": "^0.1.4",
     "gulp-eslint": "^1.0.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.5.0",
     "gulp-webserver": "^0.9.1",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",

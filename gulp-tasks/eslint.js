@@ -2,20 +2,10 @@ var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 
 gulp.task('eslint', [
-  'eslint:src',
   'eslint:unit-tests',
   'eslint:gulp-tasks',
   'eslint:config'
 ]);
-
-gulp.task('eslint:src', function() {
-  return gulp.src(['app/**/*.js', '!app/**/*.test.js'])
-    .pipe(eslint({
-      configFile: '.eslintrc-src'
-    }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
 
 gulp.task('eslint:unit-tests', function() {
   return gulp.src('app/**/*.test.js')
