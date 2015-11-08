@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var eslint = require('gulp-eslint');
 
 gulp.task('eslint', [
   'eslint:unit-tests',
@@ -8,6 +7,8 @@ gulp.task('eslint', [
 ]);
 
 gulp.task('eslint:unit-tests', function() {
+  var eslint = require('gulp-eslint');
+
   return gulp.src('app/**/*.test.js')
     .pipe(eslint({
       configFile: '.eslintrc-unit-tests'
@@ -17,6 +18,8 @@ gulp.task('eslint:unit-tests', function() {
 });
 
 gulp.task('eslint:gulp-tasks', function() {
+  var eslint = require('gulp-eslint');
+
   return gulp.src(['gulpfile.js', 'gulp-tasks/**/*.js'])
     .pipe(eslint({
       configFile: '.eslintrc-gulp-tasks'
@@ -26,6 +29,8 @@ gulp.task('eslint:gulp-tasks', function() {
 });
 
 gulp.task('eslint:config', function() {
+  var eslint = require('gulp-eslint');
+
   return gulp.src(['karma.conf.js'])
     .pipe(eslint({
       configFile: '.eslintrc-commonjs-config'

@@ -1,10 +1,10 @@
 var gulp = require('gulp');
-var xmllint = require('xmllint');
-var chalk = require('chalk');
-var minimist = require('minimist');
 var fs = require('fs');
 
 gulp.task('validate-xml', function() {
+  var xmllint = require('xmllint');
+  var chalk = require('chalk');
+  var minimist = require('minimist');
   var options = minimist(process.argv.slice(2));
   var xsd = fs.readFileSync('./manifest.xsd');
   var xmlFilePath = options.xmlfile || './manifest.xml';
