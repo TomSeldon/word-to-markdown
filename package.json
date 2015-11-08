@@ -35,11 +35,13 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^1.2.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-ng-templates": "0.0.6",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.9.2",
     "minimist": "^1.2.0",
     "tsd": "^0.6.5",
-    "typescript": "^1.6.2",
-    "upndown": "^2.0.2"
+    "typescript": "^1.6.2"
   }
 }

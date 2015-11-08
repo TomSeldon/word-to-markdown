@@ -3,37 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Word to Markdown - A Word add-in</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <!-- Vendor CSS -->
-  <link href="content/Office.css" rel="stylesheet" />
-  <link href="bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" />
-  <link href="bower_components/office-ui-fabric/dist/css/fabric.min.css" rel="stylesheet" />
-  <link href="bower_components/office-ui-fabric/dist/css/fabric.components.min.css" rel="stylesheet" />
-  <link href="content/app.css" rel="stylesheet" />
-
-  <!-- State CSS -->
-  <link href="app/states/home/home.css" rel="stylesheet" />
-  <link href="app/states/output/output.css" rel="stylesheet" />
+  <link href="css/app.css" rel="stylesheet" />
 </head>
 <body id="container">
   <div class="main-view" ui-view></div>
 
   <!-- Vendor JS -->
-  <script src="bower_components/promise-polyfill/Promise.js"></script>
-  <script src="node_modules/upndown/lib/upndown.bundle.js"></script>
-  <script src="bower_components/jquery/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-  <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-  <script src="bower_components/office-ui-fabric/dist/js/jquery.fabric.min.js"></script>
+  <script src="vendor/promise-polyfill/Promise.js"></script>
+  <script src="vendor/upndown/lib/upndown.bundle.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-animate/angular-animate.min.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="vendor/angular-translate/angular-translate.min.js"></script>
+  <script src="vendor/office-ui-fabric/dist/js/jquery.fabric.min.js"></script>
   <script src="//appsforoffice.microsoft.com/lib/1.1/hosted/Office.js"></script>
 
   <!-- App JS -->
-  <script src="dist/app/app.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/templates.js"></script>
 
   <!-- weinre debug script -->
   <!-- uncomment the below line and set the correct target script URL -->
