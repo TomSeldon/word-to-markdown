@@ -1,11 +1,11 @@
 /// <reference path="get-content-backend-browser-service.ts" />
 describe('get content backend: browser', () => {
-    let getContentBackendBrowserService;
-    let $rootScope;
+    let getContentBackendBrowserService:W2MD.Components.GetContent.GetContentBackendBrowserService;
+    let $rootScope:angular.IRootScopeService;
 
     beforeEach(angular.mock.inject(($injector) => {
         $rootScope = $injector.get('$rootScope');
-        getContentBackendBrowserService = new GetContentBackendBrowserService($injector.get('$q'));
+        getContentBackendBrowserService = new W2MD.Components.GetContent.GetContentBackendBrowserService($injector.get('$q'));
     }));
 
     describe('getting selected text', () => {

@@ -1,17 +1,7 @@
-/* eslint-disable angular/document-service */
-/* eslint-disable angular/log */
-/* eslint-disable angular/timeout-service */
-/* eslint-disable angular/window-service */
-(function () {
-    'use strict';
-
-    var officeInitialised = false;
-    var appInitialised = false;
-    var maxInitialisationTime = 3000;
-
-    // Expose bootstrap function so app can be manually started
-    window.w2md = window.w2md || {};
-    window.w2md.bootstrap = bootstrap;
+module W2MD.Bootstrap {
+    const maxInitialisationTime:Number = 3000;
+    let officeInitialised:boolean = false;
+    let appInitialised:boolean = false;
 
     // Try to bootstrap the app with Office.
     // This will never get called if we're running in a non-Office
@@ -27,7 +17,7 @@
         }
 
         console.info(`word-to-markdown didn't start because Office was not initialised.
-    To manually start word-to-mark down, run 'w2md.bootstrap()'`);
+    To manually start word-to-mark down, run 'W2MD.Bootstrap.bootstrapForBrowser()'`);
     }, maxInitialisationTime);
 
     /**
@@ -41,7 +31,7 @@
     /**
      * Bootstrapping function for when running in a browser
      */
-    function bootstrapForBrowser() {
+    export function bootstrapForBrowser() {
         angular.element(document).ready(bootstrap);
     }
 
@@ -56,4 +46,5 @@
             bootstrap();
         };
     }
-})();
+}
+

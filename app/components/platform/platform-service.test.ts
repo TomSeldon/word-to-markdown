@@ -1,7 +1,7 @@
 /// <reference path="../../_references.d.ts" />
 /// <reference path="platform-service-interface.ts" />
 describe('platform service', () => {
-    let platform:IPlatformService;
+    let platform:W2MD.Components.Platform.IPlatformService;
 
     beforeEach(angular.mock.module('word-to-markdown.platform'));
 

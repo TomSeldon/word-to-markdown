@@ -1,12 +1,10 @@
 /// <reference path="../../_references.d.ts" />
 /// <reference path="home-controller.ts" />
-(function () {
-    'use strict';
-
+module W2MD.States.Home {
     angular.module('word-to-markdown.states.home', [
         'ui.router'
     ])
-        .controller('HomeController', HomeController)
+        .controller('HomeController', W2MD.States.Home.HomeController)
         .config(routeConfigurator);
 
     /**
@@ -19,4 +17,4 @@
             controller: 'HomeController as vm'
         });
     }
-})();
+}

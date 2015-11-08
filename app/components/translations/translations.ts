@@ -1,7 +1,5 @@
 /// <reference path="../../_references.d.ts" />
-(function () {
-    'use strict';
-
+module W2MD.Components.Translations {
     angular.module('word-to-markdown.translations', [
         'pascalprecht.translate'
     ])
@@ -28,4 +26,4 @@
 
         $translateProvider.preferredLanguage('en');
     }
-})();
+}
