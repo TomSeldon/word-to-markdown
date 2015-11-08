@@ -5,8 +5,10 @@
     <p>{{ ::'w2md.click-to-convert' | translate }}</p>
     <p><strong>{{ ::'w2md.wont-change-document' | translate }}</strong></p>
 
+    <p class="error office-officeTheme-primary-fontColor" ng-if="vm.hasError()">{{ vm.errorMessage | translate }}</p>
+
     <button class="ms-Button ms-Button--primary"
-            ng-show="vm.shouldShowConvertButton()"
+            ng-disabled="!vm.shouldShowConvertButton()"
             ng-click="vm.convertSelection()">
         <span class="ms-Button-label">{{ ::'w2md.convert-selection' | translate }}</span>
     </button>

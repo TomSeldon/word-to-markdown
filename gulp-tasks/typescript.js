@@ -5,7 +5,8 @@ var typescript = require('gulp-typescript');
 var project = typescript.createProject({
   declaration: true,
   noExternalResolve: true,
-  sortOutput: true
+  sortOutput: true,
+  target: 'es5'
 });
 
 gulp.task('typescript', function() {

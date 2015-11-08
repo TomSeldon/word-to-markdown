@@ -97,7 +97,10 @@ describe('get content backend: office', () => {
             $rootScope.$apply();
 
             expect(success).not.toHaveBeenCalled();
-            expect(fail).toHaveBeenCalledWith('Error name: Error description');
+            expect(fail).toHaveBeenCalledWith(jasmine.objectContaining({
+                name: 'Error name',
+                message: 'Error description'
+            }));
         });
     });
 });

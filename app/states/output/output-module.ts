@@ -2,7 +2,8 @@
 /// <reference path="output-controller.ts" />
 module W2MD.States.Output {
     angular.module('word-to-markdown.states.output', [
-        'ui.router'
+        'ui.router',
+        'word-to-markdown.markdown-converter'
     ])
         .controller('OutputController', W2MD.States.Output.OutputController)
         .config(routeConfigurator);

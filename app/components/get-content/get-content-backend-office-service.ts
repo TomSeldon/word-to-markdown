@@ -22,7 +22,7 @@ module W2MD.Components.GetContent {
                 let html = result.value;
 
                 if (result.status === this.office.AsyncResultStatus.Failed) {
-                    deferred.reject(error.name + ': ' + error.message);
+                    deferred.reject(error);
                 } else {
                     // Get just the selected text HTML, without all of the extra content
                     html = GetContentBackendOfficeService.cleanHtml(html);
