@@ -5,8 +5,10 @@
   <ProviderName>Tom Seldon (@TomSeldon1) and Christoph Körner (@ChrisiKrnr)</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Word to Markdown"/>
-  <Description DefaultValue="Task pane addin to convert a Word document to Markdown format"/>
-  <SupportUrl DefaultValue="https://github.com/TomSeldon/office-365-hackathon"/>
+  <Description DefaultValue="Task pane add-in to convert a Word document to Markdown format"/>
+  <IconUrl DefaultValue="https://localhost:8443/index.html/images/w2md-logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:8443/index.html/images/w2md-logo-hires.png" />
+  <SupportUrl DefaultValue="https://github.com/TomSeldon/word-to-markdown"/>
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
