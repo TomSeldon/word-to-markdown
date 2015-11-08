@@ -34,7 +34,8 @@ module.exports = function(config) {
       options: {
         declaration: true,
         noExternalResolve: false,
-        sourceMap: true
+        sourceMap: true,
+        target: 'es5'
       },
 
       typings: [
