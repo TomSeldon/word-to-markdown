@@ -8,7 +8,7 @@
   <Description DefaultValue="Task pane add-in to convert a Word document to Markdown format"/>
   <IconUrl DefaultValue="https://word-to-markdown-add-in.herokuapp.com/images/w2md-logo.png" />
   <HighResolutionIconUrl DefaultValue="https://word-to-markdown-add-in.herokuapp.com/images/w2md-logo-hires.png" />
-  <SupportUrl DefaultValue="https://github.com/TomSeldon/word-to-markdown"/>
+  <SupportUrl DefaultValue="http://tomseldon.github.io/word-to-markdown/"/>
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
