@@ -4,5 +4,6 @@ gulp.task('build', [
   'typescript',
   'css',
   'html',
-  'templates'
+  'templates',
+  'images'
 ]);
