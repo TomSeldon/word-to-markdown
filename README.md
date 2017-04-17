@@ -1,6 +1,6 @@
 # Word to Markdown [![Build Status](https://travis-ci.org/TomSeldon/word-to-markdown.svg?branch=master)](https://travis-ci.org/TomSeldon/word-to-markdown) [![Coverage Status](https://coveralls.io/repos/TomSeldon/word-to-markdown/badge.svg?branch=master&service=github)](https://coveralls.io/github/TomSeldon/word-to-markdown?branch=master)
 
-> An Office plugin for converting Microsoft Word documents to Markdown
+> A [Prize Winning](http://angularconnect2015.devpost.com/submissions) Office plugin for converting Microsoft Word documents to Markdown
 
 ## Why?
 
